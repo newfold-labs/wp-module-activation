@@ -7,16 +7,18 @@
 
 namespace NewfoldLabs\WP\Module\Activation\Partners;
 
-class MonsterInsights {
+class MonsterInsights extends Partner {
 
 	/**
 	 * Initialize.
 	 *
 	 * @return void
 	 */
-	public static function init() {
-		self::disable_redirect();
-		self::dismiss_admin_notice();
+	public function init() {
+		if ( $this->isFreshInstall ) {
+			add_action( 'admin_init', array( $this, 'disable_redirect' ) );
+		}
+		add_action( 'admin_init', array( $this, 'dismiss_admin_notice' ) );
 	}
 
 	/**
@@ -24,7 +26,7 @@ class MonsterInsights {
 	 *
 	 * @return void
 	 */
-	private static function disable_redirect() {
+	public function disable_redirect() {
 		add_filter('monsterinsights_enable_onboarding_wizard', function() {
 			return false;
 		});
@@ -33,13 +35,13 @@ class MonsterInsights {
 	/**
 	 * Dismiss default admin notice.
 	 * 
-	 * The default admin notice is indismisible and doesn't have a data base option to dismiss it.
+	 * The default admin notice is indismisible and doesn't have a database option to dismiss it.
 	 * Instead, Monster Insights decides to show it based on a series of logic checks.
 	 * So, we have to unregister the admin notice action.
 	 *
 	 * @return void
 	 */
-	private static function dismiss_admin_notice() {
+	public function dismiss_admin_notice() {
 		remove_action('admin_notices', 'monsterinsights_admin_setup_notices');
 	}
 }

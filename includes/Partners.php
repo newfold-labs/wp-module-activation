@@ -1,18 +1,17 @@
 <?php
 /**
- * Partner.
+ * Partners.
  *
  * @package NewfoldLabs\WP\Module\Activation
  */
 
 namespace NewfoldLabs\WP\Module\Activation;
 
-use CreativeMail\CreativeMail as CreativeMailCreativeMail;
 use NewfoldLabs\WP\ModuleLoader\Container;
 use NewfoldLabs\WP\Module\Activation\Partners\CreativeMail;
 use NewfoldLabs\WP\Module\Activation\Partners\MonsterInsights;
 use NewfoldLabs\WP\Module\Activation\Partners\OptinMonster;
-use NewfoldLabs\WP\Module\Activation\Partners\Wpforms;
+use NewfoldLabs\WP\Module\Activation\Partners\WpForms;
 
 /**
  * Partner class.
@@ -36,11 +35,19 @@ class Partners {
 
 		$isFreshInstall = $container->has( 'isFreshInstallation' ) ? $container->get( 'isFreshInstallation' ) : false;
 		if ( $isFreshInstall ) {
-			CreativeMail::init();
-			OptinMonster::init();
-			Wpforms::init();
+			update_option( 'nfd_module_activation_fresh_install', true );
+		} else {
+			update_option( 'nfd_module_activation_fresh_install', false );
 		}
 
-		MonsterInsights::init();
+		$creativeMail   = new CreativeMail();
+		$optinMonster   = new OptinMonster();
+		$WpForms        = new WpForms();
+		$monsterInsight = new MonsterInsights();
+
+		$creativeMail->init();
+		$optinMonster->init();
+		$WpForms->init();
+		$monsterInsight->init();
 	}
 }

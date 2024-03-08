@@ -29,6 +29,7 @@ class Activation {
 	 */
 	public function __construct( Container $container ) {
 		$this->container = $container;
+		
 		new Partners( $container );
 	}
 }

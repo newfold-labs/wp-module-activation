@@ -7,15 +7,19 @@
 
 namespace NewfoldLabs\WP\Module\Activation\Partners;
 
-class Wpforms {
+class WpForms extends Partner {
 
 	/**
 	 * Initialize.
 	 *
 	 * @return void
 	 */
-	public static function init() {
-		self::disable_redirect();
+	public function init() {
+		if ( $this->isFreshInstall ) {
+			$this->disable_redirect();
+		} else {
+			$this->enable_redirect();
+		}
 	}
 
 	/**
@@ -23,8 +27,22 @@ class Wpforms {
 	 *
 	 * @return void
 	 */
-	private static function disable_redirect() {
-		// disable redirect
+	private function disable_redirect() {
 		update_option( 'wpforms_activation_redirect', true );
+	}
+
+	/**
+	 * Enable plugin activation redirect.
+	 *
+	 * @return void
+	 */
+	private function enable_redirect() {
+		$current_value = get_option( 'wpforms_activation_redirect', 'none_set' );
+		// If the option is false or 'none_set', do nothing.
+		if ( ! $current_value || 'none_set' === $current_value ) {
+			return;
+		}
+
+		delete_option( 'wpforms_activation_redirect' );
 	}
 }
