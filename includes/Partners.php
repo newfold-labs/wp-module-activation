@@ -42,12 +42,12 @@ class Partners {
 
 		$creativeMail   = new CreativeMail();
 		$optinMonster   = new OptinMonster();
-		$WpForms        = new WpForms();
+		$wpForms        = new WpForms();
 		$monsterInsight = new MonsterInsights();
 
 		$creativeMail->init();
 		$optinMonster->init();
-		$WpForms->init();
+		$wpForms->init();
 		$monsterInsight->init();
 	}
 }
