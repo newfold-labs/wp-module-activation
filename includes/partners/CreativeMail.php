@@ -7,6 +7,9 @@
 
 namespace NewfoldLabs\WP\Module\Activation\Partners;
 
+/**
+ * Creative Mail class.
+ */
 class CreativeMail extends Partner {
 
 	/**
@@ -15,7 +18,7 @@ class CreativeMail extends Partner {
 	 * @return void
 	 */
 	public function init() {
-		if ( $this->isFreshInstall ) {
+		if ( $this->is_fresh_install ) {
 			$this->disable_redirect();
 		} else {
 			$this->enable_redirect();
@@ -55,7 +58,7 @@ class CreativeMail extends Partner {
 	 */
 	private function dismiss_admin_notice() {
 		if ( ! get_option( 'ce4wp_hide_banner:get_started', false ) ) {
-			update_option( 'ce4wp_hide_banner:get_started' , true );
+			update_option( 'ce4wp_hide_banner:get_started', true );
 		}
 	}
 }

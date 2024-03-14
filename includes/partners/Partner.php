@@ -1,12 +1,15 @@
 <?php
 /**
- * Creative Mail.
+ * Partner.
  *
  * @package NewfoldLabs\WP\Module\Activation
  */
 
 namespace NewfoldLabs\WP\Module\Activation\Partners;
 
+/**
+ * Partner class.
+ */
 class Partner {
 
 	/**
@@ -14,18 +17,18 @@ class Partner {
 	 *
 	 * @var Boolean
 	 */
-	public $isFreshInstall;
+	public $is_fresh_install;
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @return void
 	 */
 	public function __construct() {
 		if ( get_option( 'nfd_module_activation_fresh_install', false ) ) {
-			$this->isFreshInstall = true;
+			$this->is_fresh_install = true;
 		} else {
-			$this->isFreshInstall = false;
+			$this->is_fresh_install = false;
 		}
 	}
 }

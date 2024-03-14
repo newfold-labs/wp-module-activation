@@ -33,21 +33,21 @@ class Partners {
 	public function __construct( Container $container ) {
 		$this->container = $container;
 
-		$isFreshInstall = $container->has( 'isFreshInstallation' ) ? $container->get( 'isFreshInstallation' ) : false;
-		if ( $isFreshInstall ) {
+		$is_fresh_install = $container->has( 'isFreshInstallation' ) ? $container->get( 'isFreshInstallation' ) : false;
+		if ( $is_fresh_install ) {
 			update_option( 'nfd_module_activation_fresh_install', true );
 		} else {
 			update_option( 'nfd_module_activation_fresh_install', false );
 		}
 
-		$creativeMail   = new CreativeMail();
-		$optinMonster   = new OptinMonster();
-		$wpForms        = new WpForms();
-		$monsterInsight = new MonsterInsights();
+		$creative_mail    = new CreativeMail();
+		$optin_monster    = new OptinMonster();
+		$wp_forms         = new WpForms();
+		$monster_insights = new MonsterInsights();
 
-		$creativeMail->init();
-		$optinMonster->init();
-		$wpForms->init();
-		$monsterInsight->init();
+		$creative_mail->init();
+		$optin_monster->init();
+		$wp_forms->init();
+		$monster_insights->init();
 	}
 }

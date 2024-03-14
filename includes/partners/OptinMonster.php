@@ -7,6 +7,9 @@
 
 namespace NewfoldLabs\WP\Module\Activation\Partners;
 
+/**
+ * Optin Monster class.
+ */
 class OptinMonster extends Partner {
 
 	/**
@@ -15,7 +18,7 @@ class OptinMonster extends Partner {
 	 * @return void
 	 */
 	public function init() {
-		if ( $this->isFreshInstall ) {
+		if ( $this->is_fresh_install ) {
 			$this->disable_redirect();
 		} else {
 			$this->enable_redirect();
@@ -50,7 +53,7 @@ class OptinMonster extends Partner {
 
 	/**
 	 * Dismiss default admin notice.
-	 * 
+	 *
 	 * Optin Monster uses 'dismissed_wp_pointers' option in the user meta to store dismissed notices.
 	 *
 	 * @return void
@@ -59,12 +62,12 @@ class OptinMonster extends Partner {
 		$user_id = get_current_user_id();
 
 		if ( $user_id > 0 ) {
-			$notice_pointer = 'omapi_please_connect_notice';
-			$dismissed_pointers = array_filter( explode( ',', ( string ) get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true ) ) );
+			$notice_pointer     = 'omapi_please_connect_notice';
+			$dismissed_pointers = array_filter( explode( ',', (string) get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true ) ) );
 
 			if ( ! in_array( $notice_pointer, $dismissed_pointers ) ) {
 				$dismissed_pointers[] = $notice_pointer;
-				$dismissed_pointers = implode( ',', $dismissed_pointers );
+				$dismissed_pointers   = implode( ',', $dismissed_pointers );
 
 				update_user_meta( $user_id, 'dismissed_wp_pointers', $dismissed_pointers );
 			}

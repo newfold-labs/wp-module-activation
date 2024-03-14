@@ -6,7 +6,7 @@ use NewfoldLabs\WP\Module\Activation\Activation;
 if ( function_exists( 'add_action' ) ) {
 	add_action(
 		'newfold_container_set',
-		function( Container $container ) {
+		function ( Container $container ) {
 			new Activation( $container );
 		}
 	);

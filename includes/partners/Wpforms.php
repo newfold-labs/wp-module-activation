@@ -7,6 +7,9 @@
 
 namespace NewfoldLabs\WP\Module\Activation\Partners;
 
+/**
+ * WP Forms class.
+ */
 class WpForms extends Partner {
 
 	/**
@@ -15,7 +18,7 @@ class WpForms extends Partner {
 	 * @return void
 	 */
 	public function init() {
-		if ( $this->isFreshInstall ) {
+		if ( $this->is_fresh_install ) {
 			$this->disable_redirect();
 		} else {
 			$this->enable_redirect();
