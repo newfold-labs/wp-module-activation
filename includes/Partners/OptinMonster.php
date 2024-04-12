@@ -18,12 +18,7 @@ class OptinMonster extends Partner {
 	 * @return void
 	 */
 	public function init() {
-		if ( $this->is_fresh_install ) {
-			$this->disable_redirect();
-		} else {
-			$this->enable_redirect();
-		}
-
+		$this->disable_redirect();
 		$this->dismiss_admin_notice();
 	}
 
@@ -34,21 +29,6 @@ class OptinMonster extends Partner {
 	 */
 	private function disable_redirect() {
 		update_option( 'optin_monster_api_activation_redirect_disabled', true );
-	}
-
-	/**
-	 * Enable plugin activation redirect.
-	 *
-	 * @return void
-	 */
-	private function enable_redirect() {
-		$current_value = get_option( 'optin_monster_api_activation_redirect_disabled', 'none_set' );
-		// If the option is false or 'none_set', do nothing.
-		if ( ! $current_value || 'none_set' === $current_value ) {
-			return;
-		}
-
-		delete_option( 'optin_monster_api_activation_redirect_disabled' );
 	}
 
 	/**

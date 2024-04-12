@@ -18,9 +18,7 @@ class MonsterInsights extends Partner {
 	 * @return void
 	 */
 	public function init() {
-		if ( $this->is_fresh_install ) {
-			add_action( 'admin_init', array( $this, 'disable_redirect' ) );
-		}
+		add_action( 'admin_init', array( $this, 'disable_redirect' ) );
 		add_action( 'admin_init', array( $this, 'dismiss_admin_notice' ) );
 	}
 
