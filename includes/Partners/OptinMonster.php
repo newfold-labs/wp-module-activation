@@ -19,7 +19,7 @@ class OptinMonster extends Partner {
 	 */
 	public function init() {
 		$this->disable_redirect();
-		$this->dismiss_admin_notice();
+		add_action( 'admin_init', array( $this, 'dismiss_admin_notice' ) );
 	}
 
 	/**
@@ -38,7 +38,7 @@ class OptinMonster extends Partner {
 	 *
 	 * @return void
 	 */
-	private function dismiss_admin_notice() {
+	public function dismiss_admin_notice() {
 		$user_id = get_current_user_id();
 
 		if ( $user_id > 0 ) {
