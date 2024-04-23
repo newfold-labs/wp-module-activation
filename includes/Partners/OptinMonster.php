@@ -18,13 +18,8 @@ class OptinMonster extends Partner {
 	 * @return void
 	 */
 	public function init() {
-		if ( $this->is_fresh_install ) {
-			$this->disable_redirect();
-		} else {
-			$this->enable_redirect();
-		}
-
-		$this->dismiss_admin_notice();
+		$this->disable_redirect();
+		add_action( 'admin_init', array( $this, 'dismiss_admin_notice' ) );
 	}
 
 	/**
@@ -37,28 +32,13 @@ class OptinMonster extends Partner {
 	}
 
 	/**
-	 * Enable plugin activation redirect.
-	 *
-	 * @return void
-	 */
-	private function enable_redirect() {
-		$current_value = get_option( 'optin_monster_api_activation_redirect_disabled', 'none_set' );
-		// If the option is false or 'none_set', do nothing.
-		if ( ! $current_value || 'none_set' === $current_value ) {
-			return;
-		}
-
-		delete_option( 'optin_monster_api_activation_redirect_disabled' );
-	}
-
-	/**
 	 * Dismiss default admin notice.
 	 *
 	 * Optin Monster uses 'dismissed_wp_pointers' option in the user meta to store dismissed notices.
 	 *
 	 * @return void
 	 */
-	private function dismiss_admin_notice() {
+	public function dismiss_admin_notice() {
 		$user_id = get_current_user_id();
 
 		if ( $user_id > 0 ) {
