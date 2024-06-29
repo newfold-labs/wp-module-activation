@@ -41,15 +41,15 @@ class Akismet extends Partner {
 	public function dismiss_admin_notice() {
 		add_filter(
 			'akismet_view_arguments',
-			function ($args, $name ) {
-			if ( 'notice' !== $name || ! isset( $args['type'] ) ) {
-				return $args;
-			}
-			if ( 'plugin' === $args['type'] ) {
-				$args['type'] = '';
-			}
+			function ( $args, $name ) {
+				if ( 'notice' !== $name || ! isset( $args['type'] ) ) {
+					return $args;
+				}
+				if ( 'plugin' === $args['type'] ) {
+					$args['type'] = '';
+				}
 
-			return $args;
+				return $args;
 			},
 			10,
 			2
