@@ -7,6 +7,7 @@
 
 namespace NewfoldLabs\WP\Module\Activation;
 
+use NewfoldLabs\WP\Module\Activation\Partners\Akismet;
 use NewfoldLabs\WP\ModuleLoader\Container;
 use NewfoldLabs\WP\Module\Activation\Partners\CreativeMail;
 use NewfoldLabs\WP\Module\Activation\Partners\MonsterInsights;
@@ -40,11 +41,13 @@ class Partners {
 			update_option( 'nfd_module_activation_fresh_install', false );
 		}
 
+		$akismet          = new Akismet();
 		$creative_mail    = new CreativeMail();
 		$optin_monster    = new OptinMonster();
 		$wp_forms         = new WpForms();
 		$monster_insights = new MonsterInsights();
 
+		$akismet->init();
 		$creative_mail->init();
 		$optin_monster->init();
 		$wp_forms->init();
