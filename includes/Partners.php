@@ -13,6 +13,7 @@ use NewfoldLabs\WP\Module\Activation\Partners\CreativeMail;
 use NewfoldLabs\WP\Module\Activation\Partners\MonsterInsights;
 use NewfoldLabs\WP\Module\Activation\Partners\OptinMonster;
 use NewfoldLabs\WP\Module\Activation\Partners\WpForms;
+use NewfoldLabs\WP\Module\Activation\Partners\Yoast;
 
 /**
  * Partner class.
@@ -43,14 +44,16 @@ class Partners {
 
 		$akismet          = new Akismet();
 		$creative_mail    = new CreativeMail();
+		$monster_insights = new MonsterInsights();
 		$optin_monster    = new OptinMonster();
 		$wp_forms         = new WpForms();
-		$monster_insights = new MonsterInsights();
+		$yoast            = new Yoast();
 
 		$akismet->init();
 		$creative_mail->init();
+		$monster_insights->init();
 		$optin_monster->init();
 		$wp_forms->init();
-		$monster_insights->init();
+		$yoast->init();
 	}
 }
