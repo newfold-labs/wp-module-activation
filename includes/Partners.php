@@ -10,6 +10,7 @@ namespace NewfoldLabs\WP\Module\Activation;
 use NewfoldLabs\WP\Module\Activation\Partners\Akismet;
 use NewfoldLabs\WP\ModuleLoader\Container;
 use NewfoldLabs\WP\Module\Activation\Partners\CreativeMail;
+use NewfoldLabs\WP\Module\Activation\Partners\Jetpack;
 use NewfoldLabs\WP\Module\Activation\Partners\MonsterInsights;
 use NewfoldLabs\WP\Module\Activation\Partners\OptinMonster;
 use NewfoldLabs\WP\Module\Activation\Partners\WpForms;
@@ -44,6 +45,7 @@ class Partners {
 
 		$akismet          = new Akismet();
 		$creative_mail    = new CreativeMail();
+		$jetpack          = new Jetpack();
 		$monster_insights = new MonsterInsights();
 		$optin_monster    = new OptinMonster();
 		$wp_forms         = new WpForms();
@@ -51,6 +53,7 @@ class Partners {
 
 		$akismet->init();
 		$creative_mail->init();
+		$jetpack->init();
 		$monster_insights->init();
 		$optin_monster->init();
 		$wp_forms->init();
