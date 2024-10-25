@@ -7,7 +7,6 @@
 
 namespace NewfoldLabs\WP\Module\Activation;
 
-use NewfoldLabs\Container\NotFoundException;
 use NewfoldLabs\WP\Module\Activation\Partners\Akismet;
 use NewfoldLabs\WP\ModuleLoader\Container;
 use NewfoldLabs\WP\Module\Activation\Partners\CreativeMail;
