@@ -36,12 +36,14 @@ class Partners {
 	public function __construct( Container $container ) {
 		$this->container = $container;
 
-		$is_fresh_install = $container->has( 'isFreshInstallation' ) ? $container->get( 'isFreshInstallation' ) : false;
-		if ( $is_fresh_install ) {
-			update_option( 'nfd_module_activation_fresh_install', true );
-		} else {
-			update_option( 'nfd_module_activation_fresh_install', false );
-		}
+		add_action( 'plugins_loaded', function() use ( $container ) {
+			$is_fresh_install = $container->has( 'isFreshInstallation' ) ? $container->get( 'isFreshInstallation' ) : false;
+			if ( $is_fresh_install ) {
+				update_option( 'nfd_module_activation_fresh_install', true );
+			} else {
+				update_option( 'nfd_module_activation_fresh_install', false );
+			}
+		});
 
 		$akismet          = new Akismet();
 		$creative_mail    = new CreativeMail();
