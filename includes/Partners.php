@@ -36,7 +36,7 @@ class Partners {
 	 */
 	public function __construct( Container $container ) {
 		$this->container = $container;
-		
+
 		$akismet          = new Akismet();
 		$creative_mail    = new CreativeMail();
 		$jetpack          = new Jetpack();
@@ -52,19 +52,19 @@ class Partners {
 		$optin_monster->init();
 		$wp_forms->init();
 		$yoast->init();
-		
-		add_filter('plugins_loaded', array( $this, 'is_fresh_install' ) );
+
+		add_filter( 'plugins_loaded', array( $this, 'is_fresh_install' ) );
 	}
-	
+
 	/**
 	 * Check if it is a fresh installation.
 	 *
 	 * @return void
 	 */
 	public function is_fresh_install() {
-		
+
 		$container = $this->container;
-		
+
 		$is_fresh_install = $container->has( 'isFreshInstallation' ) && $container->get( 'isFreshInstallation' );
 		if ( $is_fresh_install ) {
 			update_option( 'nfd_module_activation_fresh_install', true );
