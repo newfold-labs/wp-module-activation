@@ -58,9 +58,8 @@ class Partners {
 	/**
 	 * Check if it is a fresh installation.
 	 *
-	 * @return void
 	 */
-	public function is_fresh_install() {
+	public function is_fresh_install(): void {
 
 		$container = $this->container;
 
