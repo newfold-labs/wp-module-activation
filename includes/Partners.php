@@ -58,6 +58,7 @@ class Partners {
 	/**
 	 * Check if it is a fresh installation.
 	 *
+	 * @hooked plugins_loaded
 	 */
 	public function is_fresh_install(): void {
 
