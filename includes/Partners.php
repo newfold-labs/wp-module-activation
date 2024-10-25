@@ -7,7 +7,6 @@
 
 namespace NewfoldLabs\WP\Module\Activation;
 
-use NewfoldLabs\Container\NotFoundException;
 use NewfoldLabs\WP\Module\Activation\Partners\Akismet;
 use NewfoldLabs\WP\ModuleLoader\Container;
 use NewfoldLabs\WP\Module\Activation\Partners\CreativeMail;
@@ -59,9 +58,9 @@ class Partners {
 	/**
 	 * Check if it is a fresh installation.
 	 *
-	 * @return void
+	 * @hooked plugins_loaded
 	 */
-	public function is_fresh_install() {
+	public function is_fresh_install(): void {
 
 		$container = $this->container;
 
