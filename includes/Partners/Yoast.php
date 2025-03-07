@@ -39,5 +39,4 @@ class Yoast extends Partner {
 		// Disable redirect to Yoast onboarding
 		\WPSEO_Options::set( 'should_redirect_after_install_free', false );
 	}
-
 }
