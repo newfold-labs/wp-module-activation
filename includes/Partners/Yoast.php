@@ -22,18 +22,21 @@ class Yoast extends Partner {
 			'plugins_loaded',
 			function () {
 				if ( class_exists( 'WPSEO_Options' ) ) {
-					add_action( 'admin_init', array( $this, 'dismiss_admin_notice' ) );
+					add_action( 'admin_init', array( $this, 'disable_notice_and_onboarding' ) );
 				}
 			}
 		);
 	}
 
 	/**
-	 * Dismiss admin notice.
+	 * Dismiss admin notice and disable redirect to Yoast onboarding.
 	 *
 	 * @return void
 	 */
-	public function dismiss_admin_notice() {
+	public function disable_notice_and_onboarding() {
+		// Dismiss admin notice
 		\WPSEO_Options::set( 'dismiss_configuration_workout_notice', true );
+		// Disable redirect to Yoast onboarding
+		\WPSEO_Options::set( 'should_redirect_after_install_free', false );
 	}
 }
