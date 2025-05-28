@@ -41,7 +41,6 @@ class Yoast extends Partner {
 			\WPSEO_Options::set( 'dismiss_premium_deactivated', true );
 			\WPSEO_Options::set( 'dismiss_premium_notices', true );
 			\WPSEO_Options::set( 'dismiss_upsell_notice', true );
-			
 			// Keep the admin bar menu as it's functional
 			\WPSEO_Options::set( 'enable_admin_bar_menu', true );
 		}
