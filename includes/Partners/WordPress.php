@@ -35,4 +35,4 @@ class WordPress extends Partner {
             update_user_meta(get_current_user_id(), 'show_welcome_panel', 0);
         }
     }
-} 
+}
