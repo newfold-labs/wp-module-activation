@@ -19,30 +19,21 @@ class Yoast extends Partner {
 	 */
 	public function init() {
 		add_action( 'admin_init', array( $this, 'disable_notice' ) );
-		add_action( 'admin_init', array( $this, 'disable_onboarding_redirect' ) );
+		// Remove dashboard-specific premium blocks
+		add_filter( 'wpseo_premium_upgrade_admin_block', '__return_false' );
+		add_filter( 'wpseo_remove_premium_upsell_admin_block', '__return_true' );
 	}
 
 	/**
-	 * Dismiss admin notice for Yoast onboarding.
+	 * Dismiss promotional admin notices for Yoast that appear on dashboard.
 	 *
 	 * @return void
 	 */
 	public function disable_notice() {
 		if ( class_exists( 'WPSEO_Options' ) ) {
-			// Dismiss admin notice
-			\WPSEO_Options::set( 'dismiss_configuration_workout_notice', true );
-		}
-	}
-
-	/**
-	 * Disable redirect to Yoast onboarding.
-	 *
-	 * @return void
-	 */
-	public function disable_onboarding_redirect() {
-		if ( class_exists( 'WPSEO_Options' ) ) {
-			// Disable redirect to Yoast onboarding
-			\WPSEO_Options::set( 'should_redirect_after_install_free', false );
+			// Dismiss only dashboard-specific promotional notifications
+			\WPSEO_Options::set( 'dismiss_premium_notices', true );
+			\WPSEO_Options::set( 'dismiss_upsell_notice', true );
 		}
 	}
 }
