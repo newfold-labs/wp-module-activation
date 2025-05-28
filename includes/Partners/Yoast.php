@@ -34,6 +34,9 @@ class Yoast extends Partner {
 	 */
 	public function disable_notice() {
 		if ( class_exists( 'WPSEO_Options' ) ) {
+			// Dismiss admin notice
+			\WPSEO_Options::set( 'dismiss_configuration_workout_notice', true );
+
 			// Dismiss only promotional notifications
 			\WPSEO_Options::set( 'dismiss_premium_deactivated', true );
 			\WPSEO_Options::set( 'dismiss_premium_notices', true );
