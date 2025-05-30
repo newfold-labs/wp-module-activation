@@ -15,6 +15,7 @@ use NewfoldLabs\WP\Module\Activation\Partners\MonsterInsights;
 use NewfoldLabs\WP\Module\Activation\Partners\OptinMonster;
 use NewfoldLabs\WP\Module\Activation\Partners\WpForms;
 use NewfoldLabs\WP\Module\Activation\Partners\Yoast;
+use NewfoldLabs\WP\Module\Activation\Partners\WordPress;
 
 /**
  * Partner class.
@@ -43,6 +44,7 @@ class Partners {
 		$optin_monster    = new OptinMonster();
 		$wp_forms         = new WpForms();
 		$yoast            = new Yoast();
+		$wordpress        = new WordPress();
 
 		$akismet->init();
 		$creative_mail->init();
@@ -51,6 +53,7 @@ class Partners {
 		$optin_monster->init();
 		$wp_forms->init();
 		$yoast->init();
+		$wordpress->init();
 
 		add_filter( 'plugins_loaded', array( $this, 'is_fresh_install' ) );
 	}
