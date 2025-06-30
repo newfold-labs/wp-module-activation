@@ -1,6 +1,5 @@
 {
   "name": "wp-module-activation",
-  "version": "1.0.7",
   "devDependencies": {
     "@wordpress/env": "^10.22.0"
   }
