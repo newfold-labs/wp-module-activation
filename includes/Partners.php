@@ -75,6 +75,6 @@ class Partners {
 		if ( $current_value !== $desired_value ) {
 			update_option( 'nfd_module_activation_fresh_install', $desired_value );
 		}
-
+	
 	}
 }
