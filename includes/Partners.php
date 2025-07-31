@@ -68,10 +68,13 @@ class Partners {
 		$container = $this->container;
 
 		$is_fresh_install = $container->has( 'isFreshInstallation' ) && $container->get( 'isFreshInstallation' );
-		if ( $is_fresh_install ) {
-			update_option( 'nfd_module_activation_fresh_install', true );
-		} else {
-			update_option( 'nfd_module_activation_fresh_install', false );
+
+		$current_value = get_option( 'nfd_module_activation_fresh_install' );
+		$desired_value = $is_fresh_install ? true : false;
+
+		if ( $current_value !== $desired_value ) {
+			update_option( 'nfd_module_activation_fresh_install', $desired_value );
 		}
+
 	}
 }
