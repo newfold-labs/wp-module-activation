@@ -56,8 +56,11 @@ class Yoast extends Partner {
 	 */
 	public function disable_onboarding_redirect() {
 		if ( class_exists( 'WPSEO_Options' ) ) {
-			// Disable redirect to Yoast onboarding.
+			// Disable redirect to Yoast onboarding (free version).
 			\WPSEO_Options::set( 'should_redirect_after_install_free', false );
+
+			// Disable redirect to Yoast onboarding (premium version).
+			\WPSEO_Options::set( 'should_redirect_after_install', false, 'wpseo_premium' );
 		}
 	}
 }
