@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1756838061">
-  <project timestamp="1756838061">
+<coverage generated="1763648257">
+  <project timestamp="1763648257">
     <file name="/home/runner/work/wp-module-activation/wp-module-activation/includes/Activation.php">
       <class name="NewfoldLabs\WP\Module\Activation\Activation" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
@@ -167,7 +167,7 @@
     </file>
     <file name="/home/runner/work/wp-module-activation/wp-module-activation/includes/Partners/Yoast.php">
       <class name="NewfoldLabs\WP\Module\Activation\Partners\Yoast" namespace="global">
-        <metrics complexity="5" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="16" coveredelements="0"/>
+        <metrics complexity="5" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="17" coveredelements="0"/>
       </class>
       <line num="20" type="method" name="init" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="21" type="stmt" count="0"/>
@@ -185,8 +185,9 @@
       <line num="57" type="method" name="disable_onboarding_redirect" visibility="public" complexity="2" crap="6" count="0"/>
       <line num="58" type="stmt" count="0"/>
       <line num="60" type="stmt" count="0"/>
-      <metrics loc="64" ncloc="35" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="16" coveredelements="0"/>
+      <line num="63" type="stmt" count="0"/>
+      <metrics loc="67" ncloc="37" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="17" coveredelements="0"/>
     </file>
-    <metrics files="11" loc="541" ncloc="297" classes="11" methods="25" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="95" coveredstatements="0" elements="120" coveredelements="0"/>
+    <metrics files="11" loc="544" ncloc="299" classes="11" methods="25" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="96" coveredstatements="0" elements="121" coveredelements="0"/>
   </project>
 </coverage>
