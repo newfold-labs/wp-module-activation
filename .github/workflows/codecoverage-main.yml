@@ -21,6 +21,8 @@ jobs:
     steps:
       - name: Extract repository name
         id: repo-name
+        # Extract just the repository name (e.g., "wp-module-activation") from the full repository path 
+        # (e.g., "newfold-labs/wp-module-activation") by splitting on '/' and taking the second field.
         run: echo "name=$(echo ${{ github.repository }} | cut -d'/' -f2)" >> $GITHUB_OUTPUT
 
   codecoverage:
@@ -28,7 +30,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    uses: newfold-labs/workflows/.github/workflows/reusable-codecoverage.yml@add/reusable-codecoverage-workflow
+    uses: newfold-labs/workflows/.github/workflows/reusable-codecoverage.yml@main
     with:
       php-versions: '["7.4", "8.0", "8.1", "8.2", "8.3", "8.4"]'
       coverage-php-version: '7.4'
