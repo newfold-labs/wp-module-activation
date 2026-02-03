@@ -22,7 +22,7 @@ class AkismetWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 	}
 
 	/**
-	 * disable_redirect removes Activated_Akismet option when set.
+	 * Disable_redirect removes Activated_Akismet option when set.
 	 *
 	 * @return void
 	 */
@@ -37,7 +37,7 @@ class AkismetWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 	}
 
 	/**
-	 * disable_redirect does nothing when option not set.
+	 * Disable_redirect does nothing when option not set.
 	 *
 	 * @return void
 	 */

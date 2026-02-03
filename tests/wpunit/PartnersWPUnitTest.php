@@ -33,7 +33,7 @@ class PartnersWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 	}
 
 	/**
-	 * is_fresh_install updates option when container says fresh install.
+	 * Is_fresh_install updates option when container says fresh install.
 	 *
 	 * @return void
 	 */
@@ -54,7 +54,7 @@ class PartnersWPUnitTest extends \lucatume\WPBrowser\TestCase\WPTestCase {
 	}
 
 	/**
-	 * is_fresh_install updates option to false when container says not fresh install.
+	 * Is_fresh_install updates option to false when container says not fresh install.
 	 *
 	 * @return void
 	 */
