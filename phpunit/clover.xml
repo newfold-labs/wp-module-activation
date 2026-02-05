@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1769452593">
-  <project timestamp="1769452593">
+<coverage generated="1770275770">
+  <project timestamp="1770275770">
     <file name="/home/runner/work/wp-module-activation/wp-module-activation/includes/Activation.php">
       <class name="NewfoldLabs\WP\Module\Activation\Activation" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
@@ -44,14 +44,14 @@
     </file>
     <file name="/home/runner/work/wp-module-activation/wp-module-activation/includes/Partners/Akismet.php">
       <class name="NewfoldLabs\WP\Module\Activation\Partners\Akismet" namespace="global">
-        <metrics complexity="7" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="0" elements="19" coveredelements="0"/>
+        <metrics complexity="7" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="2" elements="19" coveredelements="3"/>
       </class>
       <line num="20" type="method" name="init" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="21" type="stmt" count="0"/>
       <line num="22" type="stmt" count="0"/>
-      <line num="30" type="method" name="disable_redirect" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="31" type="stmt" count="0"/>
-      <line num="32" type="stmt" count="0"/>
+      <line num="30" type="method" name="disable_redirect" visibility="public" complexity="2" crap="2" count="2"/>
+      <line num="31" type="stmt" count="2"/>
+      <line num="32" type="stmt" count="1"/>
       <line num="41" type="method" name="dismiss_admin_notice" visibility="public" complexity="4" crap="20" count="0"/>
       <line num="42" type="stmt" count="0"/>
       <line num="43" type="stmt" count="0"/>
@@ -65,7 +65,7 @@
       <line num="54" type="stmt" count="0"/>
       <line num="55" type="stmt" count="0"/>
       <line num="56" type="stmt" count="0"/>
-      <metrics loc="59" ncloc="35" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="0" elements="19" coveredelements="0"/>
+      <metrics loc="59" ncloc="35" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="2" elements="19" coveredelements="3"/>
     </file>
     <file name="/home/runner/work/wp-module-activation/wp-module-activation/includes/Partners/CreativeMail.php">
       <class name="NewfoldLabs\WP\Module\Activation\Partners\CreativeMail" namespace="global">
@@ -134,13 +134,13 @@
     </file>
     <file name="/home/runner/work/wp-module-activation/wp-module-activation/includes/Partners/Partner.php">
       <class name="NewfoldLabs\WP\Module\Activation\Partners\Partner" namespace="global">
-        <metrics complexity="2" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
+        <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
       </class>
-      <line num="27" type="method" name="__construct" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="28" type="stmt" count="0"/>
-      <line num="29" type="stmt" count="0"/>
-      <line num="31" type="stmt" count="0"/>
-      <metrics loc="35" ncloc="17" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
+      <line num="27" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="4"/>
+      <line num="28" type="stmt" count="4"/>
+      <line num="29" type="stmt" count="1"/>
+      <line num="31" type="stmt" count="3"/>
+      <metrics loc="35" ncloc="17" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
     </file>
     <file name="/home/runner/work/wp-module-activation/wp-module-activation/includes/Partners/WordPress.php">
       <class name="NewfoldLabs\WP\Module\Activation\Partners\WordPress" namespace="global">
@@ -188,6 +188,6 @@
       <line num="63" type="stmt" count="0"/>
       <metrics loc="67" ncloc="37" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="17" coveredelements="0"/>
     </file>
-    <metrics files="11" loc="544" ncloc="299" classes="11" methods="25" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="96" coveredstatements="0" elements="121" coveredelements="0"/>
+    <metrics files="11" loc="544" ncloc="299" classes="11" methods="25" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="96" coveredstatements="5" elements="121" coveredelements="7"/>
   </project>
 </coverage>
