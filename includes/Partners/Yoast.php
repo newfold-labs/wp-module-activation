@@ -21,6 +21,15 @@ class Yoast extends Partner {
 		add_action( 'admin_init', array( $this, 'disable_notice' ) );
 		add_action( 'admin_init', array( $this, 'disable_onboarding_redirect' ) );
 
+		/**
+		 * Filter: 'wpseo_should_redirect_after_install' - Allows skipping the redirect to the installation success page.
+		 *
+		 * Yoast applies this before redirecting; returning false skips the redirect.
+		 *
+		 * @param bool $should_redirect Whether to redirect. Default true.
+		 */
+		add_filter( 'wpseo_should_redirect_after_install', '__return_false' );
+
 		// Disable premium upgrade block.
 		add_filter( 'wpseo_premium_upgrade_admin_block', '__return_false' );
 
