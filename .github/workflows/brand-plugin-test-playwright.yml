@@ -32,9 +32,9 @@ jobs:
   bluehost:
     name: Bluehost Build and Test Playwright
     needs: setup
-    uses: newfold-labs/workflows/.github/workflows/module-plugin-test-playwright.yml@main
     permissions:
       contents: read # Required by the called reusable workflow to clone the private plugin repo and fetch composer source packages.
+    uses: newfold-labs/workflows/.github/workflows/module-plugin-test-playwright.yml@main
     with:
       module-repo: ${{ github.repository }}
       module-branch: ${{ needs.setup.outputs.branch }}
@@ -44,9 +44,9 @@ jobs:
   bluehost-dev:
     name: Bluehost Dev Build and Test Playwright
     needs: setup
-    uses: newfold-labs/workflows/.github/workflows/module-plugin-test-playwright.yml@main
     permissions:
       contents: read # Required by the called reusable workflow to clone the private plugin repo and fetch composer source packages.
+    uses: newfold-labs/workflows/.github/workflows/module-plugin-test-playwright.yml@main
     with:
       module-repo: ${{ github.repository }}
       module-branch: ${{ needs.setup.outputs.branch }}
