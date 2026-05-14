@@ -13,12 +13,14 @@ on:
       - main
   workflow_dispatch:
 
-permissions:
-  contents: read
+# Disable permissions for all available scopes by default.
+# Any needed permissions should be configured at the job level.
+permissions: {}
 
 jobs:
   get-repo-name:
     runs-on: ubuntu-latest
+    permissions: {} # No GitHub token access required; the job only parses the github.repository context value.
     outputs:
       repository-name: ${{ steps.repo-name.outputs.name }}
     steps:
@@ -30,10 +32,10 @@ jobs:
 
   codecoverage:
     needs: get-repo-name
-    permissions:
-      contents: write
-      pull-requests: write
     uses: newfold-labs/workflows/.github/workflows/reusable-codecoverage.yml@main
+    permissions:
+      contents: write       # Required by the called reusable workflow to checkout the private repo and commit coverage reports/badge to the gh-pages branch.
+      pull-requests: write  # Required by the called reusable workflow to post the coverage report comment on pull requests.
     with:
       php-versions: '["7.4", "8.0", "8.1", "8.2", "8.3", "8.4"]'
       coverage-php-version: '7.4'
