@@ -21,6 +21,7 @@ jobs:
   get-repo-name:
     runs-on: ubuntu-latest
     permissions: {} # No GitHub token access required; the job only parses the github.repository context value.
+    timeout-minutes: 5
     outputs:
       repository-name: ${{ steps.repo-name.outputs.name }}
     steps:

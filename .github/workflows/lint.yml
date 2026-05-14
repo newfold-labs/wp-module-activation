@@ -25,6 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read # Required to checkout the private repo and to compute the diff via technote-space/get-diff-action (uses the GitHub API to compare commits).
+    timeout-minutes: 15
     steps:
 
       - name: Checkout
