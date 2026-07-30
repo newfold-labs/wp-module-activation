@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1784560497">
-  <project timestamp="1784560497">
+<coverage generated="1785430814">
+  <project timestamp="1785430814">
     <file name="/home/runner/work/wp-module-activation/wp-module-activation/includes/Activation.php">
       <class name="NewfoldLabs\WP\Module\Activation\Activation" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
